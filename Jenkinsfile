@@ -28,6 +28,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
+                // Run the Docker container
                 sh 'docker run -d -p 5000:5000 auto-sales-data-analysis:latest'
             }
         }
