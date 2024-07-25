@@ -10,16 +10,16 @@ pipeline {
         }
         stage('Build') {
             steps {
-                // Build the Docker image
                 script {
+                    // Build the Docker image
                     dockerImage = docker.build('auto-sales-data-analysis:latest')
                 }
             }
         }
         stage('Test') {
             steps {
-                // Run tests inside the Docker container
                 script {
+                    // Run tests inside the Docker container
                     dockerImage.inside {
                         sh 'pytest'
                     }
@@ -28,7 +28,6 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                // Run the Docker container
                 sh 'docker run -d -p 5000:5000 auto-sales-data-analysis:latest'
             }
         }
