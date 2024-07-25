@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout code from the Git repository
-                git 'https://github.com/YourUsername/auto-sales-data-analysis.git'
+                git 'https://github.com/Chanthuru2023/auto-sales-data-analysis'
             }
         }
         stage('Build') {
